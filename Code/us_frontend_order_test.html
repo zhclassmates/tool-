@@ -1,0 +1,99 @@
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <title>订单验证与证据回查 · 测试页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>
+    body { font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin: 24px; }
+    input, button, select { padding: 8px; font-size: 14px; }
+    .row { margin-bottom: 12px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    pre { white-space: pre-wrap; word-break: break-word; background: #f5f5f5; padding: 12px; border-radius: 8px; }
+    .ok { color: #157347; }
+    .err { color: #b02a37; }
+    label { min-width: 140px; }
+  </style>
+</head>
+<body>
+  <h1>订单验证与证据回查</h1>
+  <div class="row">
+    <label>Base URL</label><input id="base" size="40" value="http://103.76.85.191:8082"/>
+  </div>
+  <div class="row">
+    <label>Path</label><input id="path" size="40" value="/claims/verify"/>
+  </div>
+  <div class="row">
+    <label>Method</label>
+    <select id="method">
+      <option>POST</option>
+      <option>GET</option>
+    </select>
+  </div>
+  <div class="row">
+    <label>订单号参数名</label><input id="key" size="16" value="orderRef"/>
+    <label>订单号</label><input id="order" size="28" placeholder="输入订单号"/>
+  </div>
+  <div class="row">
+    <label>交易所(可选)</label><input id="exchange" size="16" placeholder="okx/binance"/>
+  </div>
+  <div class="row">
+    <button id="btn">验证</button>
+    <span>状态：<span id="status">未开始</span></span>
+  </div>
+  <pre id="out"></pre>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    async function go() {
+      const base = $("base").value.replace(/\/+$/,'');
+      const path = "/" + $("path").value.replace(/^\/+/,'');
+      const method = $("method").value;
+      const key = $("key").value.trim() || "orderRef";
+      const order = $("order").value.trim();
+      const exchange = $("exchange").value.trim();
+      const url = base + path;
+
+      if (!order) { alert("请输入订单号"); return; }
+
+      $("status").textContent = "请求中";
+      $("status").className = "";
+      $("out").textContent = "";
+
+      let body = {};
+      body[key] = order;
+      if (exchange) body.exchange = exchange;
+
+      try {
+        const res = await fetch(url + (method === "GET" ? ("?" + new URLSearchParams(body)) : ""), {
+          method,
+          headers: method === "POST" ? { "Content-Type": "application/json" } : undefined,
+          body: method === "POST" ? JSON.stringify(body) : undefined
+        });
+        const text = await res.text();
+        $("status").textContent = res.status + " " + res.statusText;
+        $("status").className = res.ok ? "ok" : "err";
+        $("out").textContent = text;
+
+        // 基于 JSON 尝试高亮关键信息
+        try {
+          const j = JSON.parse(text);
+          const eligible = j.eligible ?? j.isEligible ?? j.eligibility;
+          const payout = j.payout ?? j.payoutAmount ?? j.payout_max ?? j.payoutMax;
+          const evidenceId = j.evidenceId ?? j.proofId ?? j.id ?? j.evidence_id;
+          const tips = [];
+          tips.push("eligible=" + eligible);
+          tips.push("payout=" + payout);
+          tips.push("evidenceId=" + evidenceId);
+          $("out").textContent = "【提取】 " + tips.join(" | ") + "\n\n" + JSON.stringify(j, null, 2);
+        } catch {}
+      } catch (e) {
+        $("status").textContent = "网络错误";
+        $("status").className = "err";
+        $("out").textContent = String(e);
+      }
+    }
+    $("btn").onclick = go;
+  </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>订单管理 · 预览</title>
+<style>
+  :root {
+    --bg:#fff;
+    --card:#fff;
+    --text:#222;
+    --muted:#666;
+    --border:#eaeaea;
+    --accent:#111;
+  }
+  body { margin:24px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC","Microsoft YaHei", "Noto Sans", sans-serif; background:var(--bg); color:var(--text); }
+  h1 { font-size:18px; margin:0 0 12px; }
+  .toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin: 12px 0 16px; }
+  input, select, button { padding:8px 10px; border:1px solid var(--border); border-radius:8px; background:#fff; }
+  .btn-primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .card { border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+  table { width:100%; border-collapse:separate; border-spacing:0; }
+  thead tr { background:#fafafa; }
+  th,td { padding:10px 12px; font-size:13px; white-space:nowrap; border-top:1px solid #f0f0f0; }
+  thead th { border-top:none; text-align:left; font-weight:600; }
+  tbody tr:first-child td { border-top:1px solid #f0f0f0; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  .right { text-align:right; }
+  .muted { color: #888; font-size:12px; }
+  .badge { padding:2px 8px; border-radius:999px; border:1px solid #ddd; font-size:12px; display:inline-block; }
+  .row-empty td { text-align:center; color:#666; padding:24px; }
+  .footer-note { color:#888; font-size:12px; margin-top:8px; }
+</style>
+</head>
+<body>
+  <h1>订单管理 · 预览</h1>
+
+  <div class="toolbar">
+    <input id="q" placeholder="搜索：订单ID / 订单号 / 钱包 / 交易对" style="flex:1; min-width:240px;" />
+    <select id="status">
+      <option value="">全部状态</option>
+      <option value="created">已创建 (created)</option>
+      <option value="pending">待支付 (pending)</option>
+      <option value="paid">已支付 (paid)</option>
+      <option value="active">生效中 (active)</option>
+      <option value="expired">已到期 (expired)</option>
+      <option value="claimed">已理赔 (claimed)</option>
+      <option value="rejected">拒赔 (rejected)</option>
+      <option value="refunded">已退款 (refunded)</option>
+      <option value="cancelled">已取消 (cancelled)</option>
+    </select>
+    <button id="refresh">刷新</button>
+    <button id="toBuy" class="btn-primary">去下单</button>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>时间</th>
+          <th>订单ID</th>
+          <th>订单号</th>
+          <th>交易所/交易对</th>
+          <th class="right">本金</th>
+          <th class="right">杠杆</th>
+          <th class="right">保费</th>
+          <th class="right">赔付上限</th>
+          <th>状态</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <div class="footer-note">此预览使用内置示例数据。接入后端后请求 <span class="mono">/orders</span> 或 <span class="mono">/orders/history</span> 渲染真实数据。</div>
+
+<script>
+const STATUS_TEXT = {"created": "已创建", "pending": "待支付", "paid": "已支付", "active": "生效中", "expired": "已到期", "claimed": "已理赔", "rejected": "拒赔", "refunded": "已退款", "cancelled": "已取消"};
+let DATA = [{"id": "vfq69wvi-00", "orderRef": "828087220860420", "wallet": "0x31521ad56647dc6e50ed4bf9950c0b13f739bb19", "exchange": "Binance", "pair": "ETH-USDC-PERP", "principal": 173.31, "leverage": 10, "premium": 14.1, "payoutCap": 1378.42, "status": "active", "createdAt": "2025-10-27T05:10:32", "updatedAt": "2025-10-27T06:25:32"}, {"id": "h5nma6ft-01", "orderRef": "650776666604126", "wallet": "0x622d2ae44a95f21e65d8757fb7753d4f36e8e3ef", "exchange": "Binance", "pair": "SOL-USDT-PERP", "principal": 625.25, "leverage": 20, "premium": 33.86, "payoutCap": 300.35, "status": "expired", "createdAt": "2025-10-27T01:10:32", "updatedAt": "2025-10-27T01:30:32"}, {"id": "fj968alr-02", "orderRef": "283251877998790", "wallet": "0x56a05610f9b0cb8ef96e53df193197e82a08480e", "exchange": "OKX", "pair": "ARB-USDT-PERP", "principal": 4227.9, "leverage": 10, "premium": 77.1, "payoutCap": 97.96, "status": "created", "createdAt": "2025-10-26T18:10:32", "updatedAt": "2025-10-26T19:18:32"}, {"id": "d4lmku0f-03", "orderRef": "220675414688637", "wallet": "0x4c77bc424bc3b281e41c8961b2e87d2410e1aba1", "exchange": "OKX", "pair": "ARB-USDT-PERP", "principal": 2943.08, "leverage": 20, "premium": 2.24, "payoutCap": 62.07, "status": "created", "createdAt": "2025-10-26T13:10:32", "updatedAt": "2025-10-26T14:15:32"}, {"id": "iagraajh-04", "orderRef": "723737292540671", "wallet": "0x2729f31d97e8cc3e19e04681db89d0a5bfac43e8", "exchange": "OKX", "pair": "SOL-USDT-PERP", "principal": 4708.79, "leverage": 3, "premium": 115.07, "payoutCap": 454.57, "status": "active", "createdAt": "2025-10-26T08:10:32", "updatedAt": "2025-10-26T08:40:32"}, {"id": "fny8r1du-05", "orderRef": "867535121276391", "wallet": "0xe8740c325c8b2d6d023d5920d5a713384037b435", "exchange": "OKX", "pair": "BTC-USDT-PERP", "principal": 4033.92, "leverage": 3, "premium": 93.94, "payoutCap": 1713.64, "status": "claimed", "createdAt": "2025-10-26T07:10:32", "updatedAt": "2025-10-26T09:01:32"}, {"id": "8y5txrtz-06", "orderRef": "769815060223949", "wallet": "0x2eb83a9b627b650e2e0dc76b65249cfeb2531539", "exchange": "Binance", "pair": "ETH-USDC-PERP", "principal": 3620.8, "leverage": 3, "premium": 44.35, "payoutCap": 53.24, "status": "pending", "createdAt": "2025-10-25T22:10:32", "updatedAt": "2025-10-26T00:03:32"}, {"id": "1dl1r4w5-07", "orderRef": "662654970345419", "wallet": "0xbdca0a0bca29b7243469feb7852aca8ee8ed0bdd", "exchange": "OKX", "pair": "ETH-USDC-PERP", "principal": 3001.31, "leverage": 20, "premium": 71.4, "payoutCap": 352.58, "status": "paid", "createdAt": "2025-10-25T17:10:32", "updatedAt": "2025-10-25T18:16:32"}, {"id": "xdqzqo8n-08", "orderRef": "395440397077162", "wallet": "0x6568fdbbd19b61d5c190924090a8902e5c91c054", "exchange": "OKX", "pair": "ARB-USDT-PERP", "principal": 297.21, "leverage": 3, "premium": 117.91, "payoutCap": 1215.66, "status": "rejected", "createdAt": "2025-10-25T15:10:32", "updatedAt": "2025-10-25T16:30:32"}, {"id": "dwdj1p0l-09", "orderRef": "955711848410317", "wallet": "0x17bcd128b2200875ed53e72f734dde67f1ae676e", "exchange": "OKX", "pair": "ETH-USDC-PERP", "principal": 825.35, "leverage": 5, "premium": 33.3, "payoutCap": 1311.28, "status": "created", "createdAt": "2025-10-25T11:10:32", "updatedAt": "2025-10-25T11:29:32"}, {"id": "jepkj47a-10", "orderRef": "680475686122277", "wallet": "0x69de96b5b0cf79cad7d0390aa0a6db1113a5b51a", "exchange": "Binance", "pair": "ETH-USDC-PERP", "principal": 1751.45, "leverage": 3, "premium": 59.53, "payoutCap": 641.89, "status": "claimed", "createdAt": "2025-10-25T06:10:32", "updatedAt": "2025-10-25T07:42:32"}, {"id": "rfo90g3v-11", "orderRef": "299364383441511", "wallet": "0x88a9767ff65143053b7350f44541cad044ae73ab", "exchange": "OKX", "pair": "ARB-USDT-PERP", "principal": 1896.99, "leverage": 10, "premium": 18.35, "payoutCap": 455.94, "status": "expired", "createdAt": "2025-10-24T21:10:32", "updatedAt": "2025-10-24T21:50:32"}, {"id": "fhbqlonm-12", "orderRef": "816721915251816", "wallet": "0xd25e9db6a3638985c8906f7447092244fcf8382e", "exchange": "OKX", "pair": "BTC-USDT-PERP", "principal": 4263.67, "leverage": 5, "premium": 6.7, "payoutCap": 372.11, "status": "claimed", "createdAt": "2025-10-24T16:10:32", "updatedAt": "2025-10-24T17:07:32"}, {"id": "hasn8hnf-13", "orderRef": "606172786770265", "wallet": "0x7ce777889ea4baf0d933666ca5ff095126c22961", "exchange": "Binance", "pair": "SOL-USDT-PERP", "principal": 4074.63, "leverage": 20, "premium": 56.92, "payoutCap": 1069.46, "status": "rejected", "createdAt": "2025-10-24T13:10:32", "updatedAt": "2025-10-24T15:02:32"}, {"id": "ny99ro2k-14", "orderRef": "729293013922842", "wallet": "0x75fd5a494842dbdf9104d7155ad1948d311a6c47", "exchange": "OKX", "pair": "BTC-USDT-PERP", "principal": 4422.98, "leverage": 10, "premium": 93.26, "payoutCap": 1305.23, "status": "pending", "createdAt": "2025-10-24T08:10:32", "updatedAt": "2025-10-24T09:17:32"}, {"id": "su4m3bib-15", "orderRef": "589220453171727", "wallet": "0x936830ab29ddaec227d1b71463388f73bcfe4029", "exchange": "OKX", "pair": "BTC-USDT-PERP", "principal": 3359.97, "leverage": 20, "premium": 44.02, "payoutCap": 365.22, "status": "created", "createdAt": "2025-10-24T04:10:32", "updatedAt": "2025-10-24T05:23:32"}, {"id": "c6myizjx-16", "orderRef": "407734956104635", "wallet": "0x3e8828467b3284d5459bf7c9ab2818ad900b006b", "exchange": "Binance", "pair": "ETH-USDC-PERP", "principal": 3421.6, "leverage": 5, "premium": 18.99, "payoutCap": 348.76, "status": "cancelled", "createdAt": "2025-10-23T22:10:32", "updatedAt": "2025-10-23T22:50:32"}, {"id": "3vd8wbhh-17", "orderRef": "381026317419416", "wallet": "0x635a9a6d407073b956e39f96042ef6eae638361d", "exchange": "OKX", "pair": "ARB-USDT-PERP", "principal": 3810.54, "leverage": 10, "premium": 68.18, "payoutCap": 1063.43, "status": "created", "createdAt": "2025-10-23T18:10:32", "updatedAt": "2025-10-23T19:20:32"}];
+
+const fmtMoney = (n) => Number.isFinite(Number(n)) ? Number(n).toFixed(2) : "-";
+const short = (s, k=6) => !s ? "-" : (s.length <= k*2+1 ? s : s.slice(0,k)+"…"+s.slice(-k));
+const fmtTime = (iso) => { try { const d=new Date(iso); return d.toLocaleString(); } catch { return iso||"-"; } };
+const byCreatedDesc = (a,b) => new Date(b.createdAt) - new Date(a.createdAt);
+
+function render() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const st = document.getElementById("status").value;
+  const list = (DATA||[]).slice().sort(byCreatedDesc).filter(o=>{
+    const hitQ = !q || (o.id||"").toLowerCase().includes(q) || (o.orderRef||"").toLowerCase().includes(q) || (o.wallet||"").toLowerCase().includes(q) || (o.pair||"").toLowerCase().includes(q);
+    const hitS = !st || o.status === st;
+    return hitQ && hitS;
+  });
+
+  const tbody = document.getElementById("tbody");
+  tbody.innerHTML = "";
+  if (!list.length) {
+    const tr = document.createElement("tr");
+    tr.className = "row-empty";
+    tr.innerHTML = `<td colspan="10">无记录</td>`;
+    tbody.appendChild(tr);
+    return;
+  }
+
+  for (const o of list) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>
+        <div>${fmtTime(o.createdAt)}</div>
+        ${o.updatedAt ? `<div class="muted">更: ${fmtTime(o.updatedAt)}</div>` : ""}
+      </td>
+      <td class="mono">${short(o.id)}</td>
+      <td class="mono">${o.orderRef||"-"}</td>
+      <td>
+        <div>${o.exchange||"-"}</div>
+        <div class="muted">${o.pair||"-"}</div>
+      </td>
+      <td class="right">${fmtMoney(o.principal)}</td>
+      <td class="right">${o.leverage ?? "-"}</td>
+      <td class="right">${fmtMoney(o.premium)}</td>
+      <td class="right">${fmtMoney(o.payoutCap)}</td>
+      <td><span class="badge">${STATUS_TEXT[o.status] || o.status}</span></td>
+      <td><button data-id="${o.id}" class="btn-detail">详情</button></td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  tbody.querySelectorAll(".btn-detail").forEach(btn=>{
+    btn.addEventListener("click", e=>{
+      const id = e.currentTarget.getAttribute("data-id");
+      const row = (DATA||[]).find(x=>x.id===id);
+      alert("订单详情\n\n" + JSON.stringify(row, null, 2));
+    });
+  });
+}
+
+document.getElementById("q").addEventListener("input", render);
+document.getElementById("status").addEventListener("change", render);
+document.getElementById("refresh").addEventListener("click", render);
+document.getElementById("toBuy").addEventListener("click", ()=> alert("跳转到 /buy"));
+
+render();
+</script>
+</body>
+</html>

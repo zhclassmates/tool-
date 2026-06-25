@@ -1,0 +1,55 @@
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <title>前端联通性测试 · US</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>
+    body { font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin: 24px; }
+    input, button { padding: 8px; font-size: 14px; }
+    .row { margin-bottom: 12px; }
+    pre { white-space: pre-wrap; word-break: break-word; background: #f5f5f5; padding: 12px; border-radius: 8px; }
+    .ok { color: #157347; }
+    .err { color: #b02a37; }
+  </style>
+</head>
+<body>
+  <h1>前端联通性测试</h1>
+  <div class="row">
+    <label>Base URL：</label>
+    <input id="base" size="40" value="http://103.76.85.191:8082"/>
+  </div>
+  <div class="row">
+    <label>Path：</label>
+    <input id="path" size="40" value="/health"/>
+    <button id="btn">GET</button>
+  </div>
+  <div class="row">
+    <span>状态：<span id="status">未开始</span></span>
+  </div>
+  <pre id="out"></pre>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    $("btn").onclick = async () => {
+      const base = $("base").value.replace(/\/+$/,'');
+      const path = "/" + $("path").value.replace(/^\/+/,'');
+      const url = base + path;
+      $("status").textContent = "请求中";
+      $("status").className = "";
+      $("out").textContent = "";
+      try {
+        const res = await fetch(url, { method: "GET" });
+        const text = await res.text();
+        $("status").textContent = res.status + " " + res.statusText;
+        $("status").className = res.ok ? "ok" : "err";
+        $("out").textContent = text;
+      } catch (e) {
+        $("status").textContent = "网络错误";
+        $("status").className = "err";
+        $("out").textContent = String(e);
+      }
+    };
+  </script>
+</body>
+</html>
