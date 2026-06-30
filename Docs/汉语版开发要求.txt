@@ -1,0 +1,174 @@
+明白。下面这份就是**可以直接甩给开发人员的「唯一执行版说明」**。
+不讨论、不发挥、不加戏，**照做即可上线**。
+
+---
+
+# LiqPass V0｜开发执行说明（最简可跑版）
+
+## 1. 产品范围（写死）
+
+* 交易所：**OKX**
+* 产品：**24 小时爆仓保**
+* 模式：**被动验证 + 半自动 + 人工放款**
+* 清算频率：**每 24 小时一次**
+* 资金原则：**钱包不长期存钱**
+
+---
+
+## 2. 一句话逻辑
+
+> 用户买保险 → 24h 内 OKX 仓位爆仓 → 用户点理赔 → 系统拉 OKX 证据 → 人工确认 → 次日统一放款。
+
+---
+
+## 3. 用户流程（前端必须实现）
+
+1. 连接钱包
+2. 绑定 OKX 只读 API（Read only）
+3. 购买「24h 爆仓保」（USDC）
+4. 发生爆仓后，点击「申请理赔」
+5. 等待人工审核结果
+
+---
+
+## 4. 核心规则（不能改）
+
+* 只保 **24 小时**
+* 只认 **OKX 官方 API**
+* 不主动轮询
+* 不自动赔付
+* 每单只赔一次
+
+---
+
+## 5. 爆仓判定规则（后端写死）
+
+**满足以下全部条件 = 候选理赔：**
+
+* policy 状态 = ACTIVE
+* 当前时间 ∈ [startAt, endAt]
+* OKX API 返回：
+
+  * liquidation / forced close 字段存在
+  * 事件时间在 24h 窗口内
+
+---
+
+## 6. Policy（保单）最小字段
+
+```ts
+policyId
+buyerWallet
+okxApiKeyId
+symbol
+startAt
+endAt
+premiumUSDC
+payoutUSDC
+status // ACTIVE | CLAIM_REQUESTED | APPROVED | REJECTED | PAID | EXPIRED
+```
+
+---
+
+## 7. Claim（理赔）最小字段
+
+```ts
+claimId
+policyId
+okxRawResponse
+canonicalJson
+hash
+fetchedAt
+decision // PENDING | APPROVED | REJECTED
+reviewer
+reviewedAt
+payoutTxHash
+```
+
+---
+
+## 8. 后端接口（最小集）
+
+* `POST /quote` → 返回保费 + 赔付额
+* `POST /purchase` → 创建 policy
+* `POST /claim` → 拉 OKX 数据，生成 claim（PENDING）
+* `GET /admin/claims` → 管理后台列表
+* `POST /admin/claims/:id/approve`
+* `POST /admin/claims/:id/reject`
+* `POST /admin/payout/batch` → 批量放款
+
+---
+
+## 9. 人工审核规则（后台照此实现）
+
+**Approve 当且仅当：**
+
+1. policy 在有效期
+2. OKX 明确记录爆仓
+3. policy 未赔付过
+
+否则 Reject。
+
+---
+
+## 10. 放款与资金策略（必须遵守）
+
+* ❌ 不自动放款
+* ✅ 每天一次批量放款
+* ✅ 热钱包仅保留「当天最大预计赔付 + buffer」
+* ✅ 放完即降额/清空
+* ✅ 全局每日赔付上限
+
+---
+
+## 11. 链上职责（极简）
+
+* USDC 收款
+* USDC 转账
+* 发事件
+* 可 pause
+
+**链上不判断、不存订单、不做验证**
+
+---
+
+## 12. 安全与兜底
+
+* pause 开关
+* 每日赔付 cap
+* policyId 唯一赔付
+* claimId 幂等
+* 所有审核/放款留日志
+
+---
+
+## 13. 不做清单（防过度开发）
+
+* ❌ 不多交易所
+* ❌ 不多产品
+* ❌ 不自动赔
+* ❌ 不轮询 OKX
+* ❌ 不长期存钱
+
+---
+
+## 14. 验收标准（开发完成定义）
+
+* 能完成一次：购买 → 爆仓 → 理赔 → 人工审核 → 放款
+* 所有步骤可回放、可对账
+* 任意时刻可暂停系统
+
+---
+
+### 一句话给开发
+
+> **这是一个“半自动保险清算工具”，不是全自动保险协议。
+> 稳定、安全、可控优先，速度第二。**
+
+如果你需要，我可以下一步直接：
+
+* 把这份拆成 **前端 / 后端 / 合约三份 TODO**
+* 或生成 **Jira / Linear 任务清单**
+* 或直接写 **README.md 可复制版**
+
+你说一句「下一步」。
