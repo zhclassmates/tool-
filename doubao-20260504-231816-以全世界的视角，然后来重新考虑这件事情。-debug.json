@@ -1,0 +1,339 @@
+{
+  "savedAt": "2026-05-04T15:18:16.616Z",
+  "pageUrl": "https://www.doubao.com/chat/38424640009698562",
+  "title": "重庆好玩酒吧推荐 - 豆包",
+  "citationCount": 0,
+  "exportQuery": "以全世界的视角，然后来重新考虑这件事情。",
+  "exportFilename": "doubao-20260504-231816-以全世界的视角，然后来重新考虑这件事情。.csv",
+  "strictCitationCount": 0,
+  "strictCitationsPreview": [],
+  "filteredOutPreview": [],
+  "mediaSources": [],
+  "networkResponseCount": 4,
+  "boundNetworkResponseCount": 0,
+  "currentConversationId": "38424640009698562",
+  "candidateNetworkResponseCount": 2,
+  "networkCitationCount": 13,
+  "networkCitationsPreview": [
+    {
+      "title": "https://hk.trip.com/toplist/tripbest/recommend/chongqing/best-clubs/100900005424",
+      "sourceName": "今日头条",
+      "domain": "hk.trip.com",
+      "url": "https://hk.trip.com/toplist/tripbest/recommend/chongqing/best-clubs/100900005424",
+      "rank": 1,
+      "sourcePanel": "doubao_network_media"
+    },
+    {
+      "title": "https://m.sohu.com/a/974007692_122534227/",
+      "sourceName": "今日头条",
+      "domain": "m.sohu.com",
+      "url": "https://m.sohu.com/a/974007692_122534227/",
+      "rank": 2,
+      "sourcePanel": "doubao_network_media"
+    },
+    {
+      "title": "https://hk.trip.com/toplist/tripbest/chongqing-best-bars-100900005468/",
+      "sourceName": "今日头条",
+      "domain": "hk.trip.com",
+      "url": "https://hk.trip.com/toplist/tripbest/chongqing-best-bars-100900005468/",
+      "rank": 3,
+      "sourcePanel": "doubao_network_media"
+    },
+    {
+      "title": "http://m.toutiao.com/group/7631473736792769065/",
+      "sourceName": "今日头条",
+      "domain": "m.toutiao.com",
+      "url": "http://m.toutiao.com/group/7631473736792769065/",
+      "rank": 4,
+      "sourcePanel": "doubao_network_media"
+    },
+    {
+      "title": "重庆十大酒吧 重庆有名的酒吧有哪些 重庆清吧推荐→买购APP",
+      "sourceName": "买购网",
+      "domain": "maigoo.com",
+      "url": "https://www.maigoo.com/top/416777.html",
+      "rank": 5,
+      "sourcePanel": "doubao_same_message_search_result"
+    },
+    {
+      "title": "重庆8家超赞酒吧咖啡店，文艺风网红拍照必去!,2026重庆榜单,景点/住宿/美食/购物/游玩排行榜【去哪儿攻略】",
+      "sourceName": "去哪儿",
+      "domain": "touch.travel.qunar.com",
+      "url": "https://touch.travel.qunar.com/smartlist/7445805",
+      "rank": 6,
+      "sourcePanel": "doubao_same_message_search_result"
+    },
+    {
+      "title": "在重庆！首个沉浸式剧场酒吧",
+      "sourceName": "携程旅行",
+      "domain": "m.ctrip.com",
+      "url": "https://m.ctrip.com/webapp/you/community/detail?articleId=281368137&hidePublishButton=true&hideTitle=true&allianceid=7144873&sid=263483165",
+      "rank": 7,
+      "sourcePanel": "doubao_same_message_search_result"
+    },
+    {
+      "title": "盘点 重庆 大型 酒吧 五一 来 重庆 这些 酒吧 你 去过 哪 几个 ？ # 重庆 酒吧 # 夜 生活 # 五一 重庆 游玩 攻略",
+      "sourceName": "抖音",
+      "domain": "iesdouyin.com",
+      "url": "https://www.iesdouyin.com/share/video/7634527411089984803",
+      "rank": 8,
+      "sourcePanel": "doubao_same_message_search_result"
+    },
+    {
+      "title": "【重庆九街酒吧】搜索结果_360地图",
+      "sourceName": "360地图",
+      "domain": "m.map.360.cn",
+      "url": "https://m.map.360.cn/m/search/map_list/keyword=%E9%87%8D%E5%BA%86%E4%B9%9D%E8%A1%97%E9%85%92%E5%90%A7",
+      "rank": 9,
+      "sourcePanel": "doubao_same_message_search_result"
+    },
+    {
+      "title": "重庆坚果Livehouse",
+      "sourceName": "今日头条",
+      "domain": "tuchong.com",
+      "url": "http://tuchong.com/2081055/15007446/",
+      "rank": 10,
+      "sourcePanel": "doubao_network_media"
+    }
+  ],
+  "runId": "",
+  "promptHash": "5a1ae837",
+  "linkCount": 22,
+  "referenceTriggerCount": 0,
+  "rawUrlCandidateCount": 32,
+  "networkResponses": [
+    {
+      "url": "/im/conversation/info?version_code=20800&language=zh&device_platform=web&aid=497858&real_aid=497858&pkg_type=release_version&device_id=7611143070369990170&pc_version=3.17.0&region=&sys_region=&samantha_web=1&use-olympus-account=1&web_tab_id=96e42849-8da4-4927-a6fe-047960860305",
+      "transport": "xhr",
+      "capturedAt": 1777906493475,
+      "runId": "",
+      "promptHash": "",
+      "conversationId": "",
+      "messageId": "",
+      "requestId": "",
+      "length": 17346,
+      "hasSearchQueryResultBlock": false,
+      "hasTextCard": false,
+      "hasMainSiteUrl": false,
+      "hasContentBlock": true,
+      "preview": "{\"cmd\":1110, \"sequence_id\":\"df6a3598-2943-4e04-b82b-5deef066db00\", \"downlink_body\":{\"get_conv_info_downlink_body\":{\"conversation_info\":{\"conversation_id\":\"38424640009698562\", \"conversation_type\":3, \"creator_id\":\"1634331379899578\", \"name\":\"重庆好玩酒吧推荐\", \"image\":{\"key\":\"\", \"image_thumb\":{\"url\":\"https://p5-flow-imagex-sign.byteimg.com/ocean-cloud-tos/FileBizType.BIZ_BOT_ICON/bot_0817_04.png~tplv-a9rns2rl98-image-qvalue.png?lk3s=8e244e95&rcl=202605042254522A486495C3CBE2DF0178&rrcfp=46ad2b83&x-expires=1"
+    },
+    {
+      "url": "/im/chain/single?version_code=20800&language=zh&device_platform=web&aid=497858&real_aid=497858&pkg_type=release_version&device_id=7611143070369990170&pc_version=3.17.0&region=&sys_region=&samantha_web=1&use-olympus-account=1&web_tab_id=96e42849-8da4-4927-a6fe-047960860305",
+      "transport": "xhr",
+      "capturedAt": 1777906494816,
+      "runId": "",
+      "promptHash": "",
+      "conversationId": "",
+      "messageId": "",
+      "requestId": "",
+      "length": 46421,
+      "hasSearchQueryResultBlock": true,
+      "hasTextCard": true,
+      "hasMainSiteUrl": true,
+      "hasContentBlock": true,
+      "preview": "{\"cmd\":3100, \"sequence_id\":\"8d89de63-d36d-44b7-a8cf-735db621f9de\", \"downlink_body\":{\"pull_singe_chain_downlink_body\":{\"messages\":[{\"conversation_id\":\"38424640009698562\", \"message_id\":\"44196402831891970\", \"message_body_version\":\"1\", \"sender_id\":\"7338286299411103781\", \"user_type\":2, \"status\":0, \"content_type\":9999, \"content\":\"\", \"content_status\":0, \"index_in_conv\":\"2\", \"create_time\":\"1777906456\", \"sec_sender\":\"MS4wLjABAAAA3Msx91dgLGoJV54FJ5m8ld2t7SnJ5NRH0jZ0ZBvtwnsEVST4qssz2tlaPp-u0lYD\", \"thinking"
+    },
+    {
+      "url": "https://www.doubao.com/chat/completion?aid=497858&device_id=7611143070369990170&device_platform=web&fp=verify_mor5ep8d_jtRExA9n_S6tt_4HoU_BVV5_3T0bnZeXljT7&language=zh&pc_version=3.17.0&pkg_type=release_version&real_aid=497858&region=&samantha_web=1&sys_region=&tea_uuid=7630296860607972916&use-olympus-account=1&version_code=20800&web_id=7630296860607972916&web_tab_id=96e42849-8da4-4927-a6fe-047960860305&msToken=mvDzuBvg0wiFArbl-Gm5749lullMXob_A-N07l3SLCljhdXO8ww7355T8w_F5TIDC_L-enQ9-kgdccrBgRoziDVEo7DXt0hUDcU34SutJVf7I5T0oCEnE9DhCVVQ7Ur1eTU_V0Fm-biFU2xF5xKntW9GEHPCNMEdQoMW_xUKfJ2U&a_bogus=Qj0VDet7QdRfFV%2FS8Kxn9Rr5Y2clrTSyd-ixbt3RHqY9PHFY%2FAl%2FYyyUJPNRKHX3omkkkoA74EavbdjbYW-w1ZrkomkvSNkjg0I9nXvLZqpdTPihJqgsCmtxui-uUATO%2F%2F2IEBE16UzJ16c3hrn8lV-a95zPQYYDbrqWd20cr9ATDCyPupabO2wWPjHcUCIS",
+      "transport": "fetch",
+      "capturedAt": 1777906529420,
+      "runId": "",
+      "promptHash": "",
+      "conversationId": "",
+      "messageId": "",
+      "requestId": "",
+      "length": 96816,
+      "hasSearchQueryResultBlock": true,
+      "hasTextCard": true,
+      "hasMainSiteUrl": true,
+      "hasContentBlock": true,
+      "preview": "id: 0\nevent: SSE_HEARTBEAT\ndata: {}\n\nid: 0\nevent: SSE_ACK\ndata: {\"query_list\":[{\"question_id\":\"44196402831886594\",\"local_message_id\":\"6decaabd-8b44-42fc-9d75-06b2f328bae8\",\"message_index\":1}],\"ack_client_meta\":{\"conversation_id\":\"38424640009698562\",\"conversation_type\":3,\"section_id\":\"38424640009698818\"},\"timeout_conf\":{\"answer_first_pending_time\":180000,\"packet_interval_time\":120000}}\n\nid: 4\nevent: STREAM_MSG_NOTIFY\ndata: {\"content\":{\"content_block\":[{\"block_type\":10101,\"block_id\":\"9602134546607"
+    },
+    {
+      "url": "/im/conversation/info?version_code=20800&language=zh&device_platform=web&aid=497858&real_aid=497858&pkg_type=release_version&device_id=7611143070369990170&pc_version=3.17.0&web_id=7630296860607972916&tea_uuid=7630296860607972916&region=&sys_region=&samantha_web=1&use-olympus-account=1&web_tab_id=96e42849-8da4-4927-a6fe-047960860305",
+      "transport": "xhr",
+      "capturedAt": 1777907895960,
+      "runId": "",
+      "promptHash": "",
+      "conversationId": "",
+      "messageId": "",
+      "requestId": "",
+      "length": 17561,
+      "hasSearchQueryResultBlock": false,
+      "hasTextCard": false,
+      "hasMainSiteUrl": false,
+      "hasContentBlock": true,
+      "preview": "{\"cmd\":1110, \"sequence_id\":\"af4e7fc7-cde4-4d6a-954a-f7eff84eb7e5\", \"downlink_body\":{\"get_conv_info_downlink_body\":{\"conversation_info\":{\"conversation_id\":\"38424640009698562\", \"conversation_type\":3, \"creator_id\":\"1634331379899578\", \"name\":\"重庆好玩酒吧推荐\", \"image\":{\"key\":\"\", \"image_thumb\":{\"url\":\"https://p5-flow-imagex-sign.byteimg.com/ocean-cloud-tos/FileBizType.BIZ_BOT_ICON/bot_0817_04.png~tplv-a9rns2rl98-image-qvalue.png?lk3s=8e244e95&rcl=202605042318155CA24DA489902647290B&rrcfp=46ad2b83&x-expires=1"
+    }
+  ],
+  "links": [
+    {
+      "href": "https://www.doubao.com/chat/create-image",
+      "text": "AI 创作",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/drive/?from=sidebar_ai_drive",
+      "text": "云盘",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38424640009698562",
+      "text": "重庆好玩酒吧推荐",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38423638166762242",
+      "text": "澳门换钱指南",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38424572621684738",
+      "text": "厦门海鲜餐厅推荐",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38424621623051522",
+      "text": "重庆热门老火锅合集",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38424535962886402",
+      "text": "重庆热门老火锅合集",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38424519604921858",
+      "text": "重庆热门老火锅推荐",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38424500299174658",
+      "text": "重庆火锅推荐",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38424571580539138",
+      "text": "四川火锅推荐",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38424571288620546",
+      "text": "重庆火锅推荐",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38424500385101570",
+      "text": "重庆火锅推荐",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/1220087914281474",
+      "text": "手机版对话",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38422542011144962",
+      "text": "FSI模式操练英文训练",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38421839885167362",
+      "text": "越南公务员报考与任命指南",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38422272940671746",
+      "text": "越南教育与培训部通令逐页翻译",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38421077266468354",
+      "text": "寺庙经济调研分析",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38421068080032770",
+      "text": "错位的养育：金钱管控下的阶层社交困境（续）",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38421065000815618",
+      "text": "中国合规制度套利执行与机会",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38418994039016962",
+      "text": "人生的意义是体验",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38417005017293058",
+      "text": "分辨狗的方法 1",
+      "ariaLabel": "",
+      "title": ""
+    },
+    {
+      "href": "https://www.doubao.com/chat/38415796504720130",
+      "text": "男科症状咨询",
+      "ariaLabel": "",
+      "title": ""
+    }
+  ],
+  "referenceTriggers": [],
+  "rawUrlCandidates": [
+    "https://lf3-short.ibytedapm.com/slardar/fe/sdk-web/browser.1.16.6.cn.js",
+    "https://lf3-short.ibytedapm.com/slardar/fe/sdk-web/browser.1.16.6.cn.js?bid=flow_web&globalName=inlineSlardarInstance",
+    "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/doubao_avatar.png",
+    "https://lf-flow-web-cdn.doubao.com",
+    "https://lf3-short.ibytedapm.com",
+    "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/favicon/64x64.png",
+    "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/favicon/128x128.png",
+    "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/favicon/192x192.png",
+    "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/favicon/76x76.png",
+    "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/favicon/120x120.png",
+    "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/favicon/152x152.png",
+    "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/favicon/180x180.png",
+    "https://lf3-short.ibytedapm.com/slardar/fe/sdk-web/plugins/common-monitors.1.16.6.js",
+    "https://lf3-short.ibytedapm.com/slardar/fe/sdk-web/plugins/action.1.16.6.js",
+    "https://lf-rc1.yhgfb-cn-static.com/obj/rc-verifycenter/verifycenter/1.0.0.306/index.js",
+    "http://www.w3.org/2000/svg",
+    "https://p9-passport.byteacctimg.com/img/user-avatar/98199bc8c7b662c37b606ba369f1d36f~300x300.image",
+    "http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27256%27%20height=%27192%27/%3e",
+    "https://p5-flow-imagex-sign.byteimg.com/labis/image/6bc5602e55654c560102f55497d4f950~tplv-a9rns2rl98-pc_smart_face_crop-v1:512:384.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266515&x-signature=FUdDBnILgl%2F1nOeP3ph7Fg2TpuQ%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/labis/image/ce25bf3f677bfb1b40f364792e463cc1~tplv-a9rns2rl98-pc_smart_face_crop-v1:512:384.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266515&x-signature=%2BaNQZzFgplIE%2FJAdzoTjxBL%2FzjM%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/labis/image/ea68fce02edaa6440b48587943f5a31e~tplv-a9rns2rl98-pc_smart_face_crop-v1:512:384.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266515&x-signature=AbjzOTzNXM5HblPDyyPhhOr4xyo%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/labis/image/c33e1ad412de9e0cacab37061705f377~tplv-a9rns2rl98-pc_smart_face_crop-v1:512:384.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266516&x-signature=vRuv0zfynGYMl1lU60QjDzpOtLE%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/labis/image/4613b3ec31ac31165230b8e75c56f7dc~tplv-a9rns2rl98-pc_smart_face_crop-v1:512:384.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266517&x-signature=qnVpUbD%2BwKTsOuvxw4ofWJbJuDg%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/isp-i18n-media/img/23d93bed49c05f88e1396389bf8aa330~tplv-a9rns2rl98-pc_smart_face_crop-v1:400:300.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266517&x-signature=Ybcg0aXliu7qPpNm4JcfvZ%2B0Vuc%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/isp-i18n-media/img/de8d279af9985703f1a4b7ffd9e374bf~tplv-a9rns2rl98-pc_smart_face_crop-v1:400:300.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266518&x-signature=wU9R1HSK2ZuuJVcDOIT7oLvmEF8%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/isp-i18n-media/img/a2ba52cf5cbb7e43dc4f40bdecf387b3~tplv-a9rns2rl98-pc_smart_face_crop-v1:400:300.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266518&x-signature=%2B9YBOjHUVAhv0wAP9g580OZFoNw%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/labis/image/8f0ddf5dd5cf6329b975695a66ab52a9~tplv-a9rns2rl98-pc_smart_face_crop-v1:512:384.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266520&x-signature=yvCJNYuGzSgoacixA0Dz4BysALY%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/labis/image/6fb1dcd27657fee61a0fe9f64ee8339f~tplv-a9rns2rl98-pc_smart_face_crop-v1:512:384.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266521&x-signature=9%2BmBGn%2F4i41Sne6BVD9dvfjjH6M%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/labis/b2e7386842b0041c61dc0e9153cb0dfe~tplv-a9rns2rl98-pc_smart_face_crop-v1:512:384.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266522&x-signature=b5HKoJjlgAIDzFdU1j64zlhhTUA%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/tos-cn-i-6w9my0ksvp/46ea6ebd3a84462290c263ed40531a39~tplv-a9rns2rl98-pc_smart_face_crop-v1:512:384.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266524&x-signature=UbcI9pH4Bu1W6QAFJJPXlX%2FtggA%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/tos-cn-i-6w9my0ksvp/5eb0017689e449df97546d4d244a4b86~tplv-a9rns2rl98-pc_smart_face_crop-v1:512:384.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266524&x-signature=Q73kBR9CgHaxQpdzx%2FypRdAS7uM%3D",
+    "https://p5-flow-imagex-sign.byteimg.com/labis/866ae17af14099b3f81e3fd68f26e621~tplv-a9rns2rl98-pc_smart_face_crop-v1:512:384.image?lk3s=8e244e95&rcl=2026050422550829AE5AA6165807412D21&rrcfp=cee388b0&x-expires=2093266525&x-signature=YOT%2BVl5Xn0OJjnQQXkMWk8GYKKY%3D"
+  ]
+}
